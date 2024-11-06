@@ -766,6 +766,89 @@ Leg_motor_mode3:
 
     GOTO RX_EXIT
 
+골프_민초파피샷:
+
+    SPEED 8
+
+    MOVE G6B, ,  ,  ,  ,  ,  100
+    WAIT
+
+    MOVE G6C, ,  ,  ,  ,  39
+    WAIT
+
+    MOVE G6A,  94,  60, 152, 122, 108,
+    MOVE G6D,  87,  59, 154, 120, 112,
+    MOVE G6B, 100,  30,  80,  ,  ,
+    MOVE G6C, 100,  30,  80,  ,  ,
+    WAIT
+    MOVE G6A,  94,  60, 152, 122, 108,
+    MOVE G6D,  87,  59, 154, 120, 112,
+    MOVE G6B, 100,  30,  80,  ,  ,
+    MOVE G6C, 109,  53,  81,  ,  ,
+    WAIT
+    MOVE G6A,  94,  60, 152, 122, 108,
+    MOVE G6D,  87,  59, 154, 120, 112,
+    MOVE G6B, 100,  30,  80,  ,  ,
+    MOVE G6C, 155,  32,  81,  ,  ,
+    WAIT
+    MOVE G6A,  94,  60, 152, 122, 108,
+    MOVE G6D,  87,  59, 154, 120, 112,
+    MOVE G6B, 100,  35,  90,  ,  ,
+    MOVE G6C, 153,  88,  10,  120,  ,
+    WAIT
+    MOVE G6A,  94,  60, 152, 122, 108,
+    MOVE G6D,  87,  59, 154, 120, 112,
+    MOVE G6B, 100,  35,  90,  ,  ,
+    MOVE G6C, 157, 145,  30,  120,  ,
+    WAIT
+    DELAY 1000
+
+    SPEED 6
+
+    'HIGHSPEED SETON
+
+    'MOVE G6A,  94,  60, 152, 122, 108,
+    'MOVE G6D,  87,  59, 154, 120, 112,
+    'MOVE G6B, 100,  35,  90,  ,  ,
+    'MOVE G6C, 154, 90,  27,  70,  ,
+
+    MOVE G6A,  94,  60, 152, 122, 108,
+    MOVE G6D,  87,  59, 154, 120, 112,
+    MOVE G6B, 100,  35,  90,  ,  ,
+    MOVE G6C, 157,  77,  27,  10,  ,
+
+    'MOVE G6A,  94,  60, 152, 122, 108,
+    'MOVE G6D,  87,  59, 154, 120, 112,
+    'MOVE G6B, 100,  35,  90,  ,  ,
+    'MOVE G6C, 154,  65,  30,  10,  ,
+
+    MOVE G6C, 157,  45,  30,  10,  ,
+
+    WAIT
+    DELAY 1000
+
+    'HIGHSPEED SETOFF
+
+    SPEED 8
+
+    MOVE G6C, 157,  77,  27,  10,  ,
+    WAIT
+
+    MOVE G6C, 157,  77,  27,  120,  ,
+    WAIT
+
+    MOVE G6A,100,  76, 145,  93, 100, 100	'차렷
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    GOSUB 기본자세
+
+    ETX 4800, 50
+
+    GOTO RX_EXIT
+
     '******************************************
 
 세레머니:
@@ -778,10 +861,15 @@ Leg_motor_mode3:
     WAIT
 
     MOVE G6B,100,  30,  120,
-    MOVE G6C,160,  30,  80, 190
+    MOVE G6C,100,  190,  100, 10,  130
     WAIT
+    'SPEED 15
+    'HIGHSPEED SETON
 
-    GOSUB 기본자세
+    'MOVE G6A,100,  190, 190,  50, 100, 100
+    'MOVE G6D,100,  190, 190,  50, 100, 100
+
+    'HIGHSPEED SETOFF
 
     GOTO RX_EXIT
 
@@ -964,6 +1052,8 @@ Leg_motor_mode3:
 
     GOTO RX_EXIT
 
+
+
 무한루프걷기:
     GOSUB All_motor_mode3
 
@@ -1081,24 +1171,25 @@ Leg_motor_mode3:
 
     SPEED 15
 
+    '원본
     'MOVE G6A,  99,  76, 145,  93, 100,
     'MOVE G6D,  88,  76, 145,  93, 112,
     'MOVE G6B, 100,  30,  80,  ,  ,
-    ' MOVE G6C, 100,  30,  80,  ,  ,
+    'MOVE G6C, 100,  30,  80,  ,  ,
     'WAIT
 
-    '원본
-    MOVE G6A,  99,  76, 145,  93, 100,
-    MOVE G6D,  89,  76, 145,  92, 111,
-    MOVE G6B, 100,  30,  80,  ,  ,
-    MOVE G6C, 100,  30,  80,  ,  ,
-    WAIT
-
-    'MOVE G6A,  105,  61, 172,  83, 100,
-    'MOVE G6D,  89,  76, 145,  93, 111,
+    '지원 세이브본
+    'MOVE G6A,  99,  76, 145,  93, 100,
+    'MOVE G6D,  89,  76, 145,  92, 111,
     'MOVE G6B, 100,  30,  80,  ,  ,
     'MOVE G6C, 100,  30,  80,  ,  ,
     'WAIT
+
+    MOVE G6A,  99,  76, 145,  93, 100,
+    MOVE G6D,  89,  76, 145,  93, 111,
+    MOVE G6B, 100,  30,  80,  ,  ,
+    MOVE G6C, 100,  30,  80,  ,  ,
+    WAIT
 
     '원본
     'MOVE G6A,  93,  61, 172,  80, 100,
@@ -1107,20 +1198,18 @@ Leg_motor_mode3:
     'MOVE G6C, 100,  30,  80,  ,  ,
     'WAIT
 
-    MOVE G6A,  93,  58, 172,  80, 100,
-    MOVE G6D,  89,  76, 145,  90, 111,
-    MOVE G6B, 100,  30,  80,  ,  ,
-    MOVE G6C, 100,  30,  80,  ,  ,
-    WAIT
-
-
-
-
-    'MOVE G6A,  75,  72, 155,  83, 100,
-    'MOVE G6D,  99,  76, 145,  93, 111,
+    '지원 세이브본
+    'MOVE G6A,  93,  58, 172,  80, 100,
+    'MOVE G6D,  89,  76, 145,  90, 111,
     'MOVE G6B, 100,  30,  80,  ,  ,
     'MOVE G6C, 100,  30,  80,  ,  ,
     'WAIT
+
+    MOVE G6A,  75,  72, 155,  83, 100,
+    MOVE G6D,  99,  76, 145,  93, 111,
+    MOVE G6B, 100,  30,  80,  ,  ,
+    MOVE G6C, 100,  30,  80,  ,  ,
+    WAIT
 
     '원본
     'MOVE G6A,  80,  74, 155,  83, 100,
@@ -1128,11 +1217,13 @@ Leg_motor_mode3:
     'MOVE G6B, 100,  30,  80,  ,  ,
     'MOVE G6C, 100,  30,  80,  ,  ,
     'WAIT
-    MOVE G6A,  80,  76, 155,  82, 100,
-    MOVE G6D,  99,  81, 145,  85, 111,
-    MOVE G6B, 100,  30,  80,  ,  ,
-    MOVE G6C, 100,  30,  80,  ,  ,
-    WAIT
+
+    '지원 세이브본
+    'MOVE G6A,  80,  76, 155,  82, 100,
+    'MOVE G6D,  99,  81, 145,  85, 111,
+    'MOVE G6B, 100,  30,  80,  ,  ,
+    'MOVE G6C, 100,  30,  80,  ,  ,
+    'WAIT
 
     'MOVE G6A,  80,  66, 155,  87, 100,
     'MOVE G6D,  99,  76, 145,  90, 111,
@@ -1140,15 +1231,13 @@ Leg_motor_mode3:
     'MOVE G6C, 100,  30,  80,  ,  ,
     'WAIT
 
-
-
-    MOVE G6A,  80,  64, 165,  79, 100,
+    MOVE G6A,  85,  64, 165,  79, 100,
     MOVE G6D, 104,  81, 140,  90, 111,
     MOVE G6B, 100,  30,  80,  ,  ,
     MOVE G6C, 100,  30,  80,  ,  ,
-    WAIT
+    WAIT			''바꿔야됨.
 
-    MOVE G6A,  80,  58, 165,  77, 100,
+    MOVE G6A,  85,  73, 155,  77, 100,
     MOVE G6D, 104,  81, 140,  90, 111,
     MOVE G6B, 100,  30,  80,  ,  ,
     MOVE G6C, 100,  30,  80,  ,  ,
@@ -1195,6 +1284,8 @@ Leg_motor_mode3:
     SPEED 3
 
     GOTO RX_EXIT
+
+
 
 걷기_왼:
     MOTORMODE G6A,2,2,2,2,1
@@ -1660,31 +1751,34 @@ Leg_motor_mode3:
 
 우회전_루프: '90도 회전시 9~10회
 
-    'MOTORMODE G6A,1,1,1,1,1
-    'MOTORMODE G6D,1,1,1,1,1
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
 
-    FOR i = 0 TO 11
+    FOR i = 0 TO 20
 
-        SPEED 7	
-        MOVE G6A,97,  66, 145,  103, 103, 100
-        MOVE G6D,97,  86, 145,  83, 103, 100
+        SPEED 5
+        MOVE G6A,100,  86, 145,  83, 106, 100
+        MOVE G6D,94,  66, 145, 103, 100, 100
         WAIT
 
         SPEED 12
-        MOVE G6A,94,  66, 145,  103, 101, 100
-        MOVE G6D,91,  86, 145,  83, 101, 100
+        MOVE G6A,97,  86, 145,  83, 104, 100
+        MOVE G6D,91,  66, 145, 103, 96, 100
         WAIT
 
         SPEED 6
         MOVE G6A,101,  76, 146,  93, 98, 100
         MOVE G6D,101,  76, 146,  93, 98, 100
-        MOVE G6B,,  40,  90,
-        MOVE G6C,,  40,  90,
         WAIT
 
-        SPEED 6
+        MOVE G6A,100,  76, 145,  93, 100, 100
+        MOVE G6D,100,  76, 145,  93, 100, 100
+        MOVE G6B,100,  30,  80,
+        MOVE G6C,100,  30,  80, 190
+        WAIT
 
-        GOSUB 기본자세
+        mode = 0
+
     NEXT i
 
     ETX 4800, 58
@@ -1692,32 +1786,34 @@ Leg_motor_mode3:
     GOTO RX_EXIT
 
 좌회전_루프: '90도 회전시 16회
-    MOTORMODE G6A,2,2,2,2,1
-    MOTORMODE G6D,2,2,2,2,1
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
 
-    FOR i = 0 TO 14
+
+    FOR i = 0 TO 21
 
         SPEED 5
         MOVE G6A,100,  86, 145,  83, 106, 100
         MOVE G6D,94,  66, 145, 103, 100, 100
         WAIT
 
-        'MOVE G6A,100,  86, 145,  83, 106, 100
-        'MOVE G6D,94,  66, 145, 103, 100, 100
-
-        SPEED 15
-        MOVE G6A,95,  86, 145,  83, 104, 100
+        SPEED 12
+        MOVE G6A,97,  86, 145,  83, 104, 100
         MOVE G6D,91,  66, 145, 103, 96, 100
         WAIT
 
-        SPEED 8
+        SPEED 6
         MOVE G6A,101,  76, 146,  93, 98, 100
         MOVE G6D,101,  76, 146,  93, 98, 100
-        MOVE G6B,100,  40,  90,
-        MOVE G6C,100,  40,  90,
         WAIT
 
-        GOSUB 기본자세
+        MOVE G6A,100,  76, 145,  93, 100, 100
+        MOVE G6D,100,  76, 145,  93, 100, 100
+        MOVE G6B,100,  30,  80,
+        MOVE G6C,100,  30,  80, 190
+        WAIT
+
+        mode = 0
 
     NEXT i
 
@@ -2064,6 +2160,34 @@ Leg_motor_mode3:
 
     GOTO RX_EXIT
 
+오른쪽옆으로10연속_골프:
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
+
+    SPEED 12
+    MOVE G6D, 97,  90, 123, 100, 104, 100
+    MOVE G6A,104,  76, 144,  93, 104, 100
+    WAIT
+
+    SPEED 12
+    MOVE G6D, 103,  76, 144, 93, 100, 100
+    MOVE G6A,  90,  80, 138, 95, 104, 100
+    WAIT
+
+    SPEED 12
+    MOVE G6D,98,  76, 144,  93, 98, 100
+    MOVE G6A,98,  76, 144,  93, 98, 100
+    WAIT
+
+    SPEED 3
+    MOVE G6A,100,  76, 145,  93, 100, 100
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    GOTO RX_EXIT
+
 왼쪽옆으로20_골프: '****
     MOTORMODE G6A,3,3,3,3,2
     MOTORMODE G6D,3,3,3,3,2
@@ -2096,9 +2220,39 @@ Leg_motor_mode3:
 
     GOTO RX_EXIT
 
+왼쪽옆으로10연속_골프:
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
+
+    SPEED 12
+    MOVE G6A, 95,  90, 125, 100, 105, 100
+    MOVE G6D,105,  76, 146,  93, 105, 100
+    WAIT
+
+    SPEED 12
+
+    MOVE G6A, 102,  76, 146, 93, 100, 100
+    MOVE G6D,  90,  80, 140, 95, 107, 100
+    WAIT
+
+    SPEED 12
+    MOVE G6D,98,  76, 144,  93, 98, 100
+    MOVE G6A,98,  76, 144,  93, 98, 100
+    WAIT
+
+    SPEED 3
+    MOVE G6A,100,  76, 145,  93, 100, 100
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    GOTO RX_EXIT
+
 왼쪽턴5_골프:
     MOTORMODE G6A,3,3,3,3,2
     MOTORMODE G6D,3,3,3,3,2
+
     SPEED 5
     MOVE G6A,100,  81, 145,  88, 106, 100
     MOVE G6D,94,  71, 145, 98, 100, 100
@@ -2120,6 +2274,27 @@ Leg_motor_mode3:
     MOVE G6C,100,  30,  80, 190
     WAIT
 
+    'SPEED 5
+    'MOVE G6A,100,  81, 145,  88, 106, 100
+    'MOVE G6D,94,  71, 145, 98, 100, 100
+    'WAIT
+
+    'SPEED 12
+    'MOVE G6A,97,  81, 145,  88, 104, 100
+    'MOVE G6D,91,  71, 145, 98, 96, 100
+    'WAIT
+
+    'SPEED 6
+    'MOVE G6A,101,  76, 146,  93, 98, 100
+    'MOVE G6D,101,  76, 146,  93, 98, 100
+    'WAIT
+
+    'MOVE G6A,100,  76, 145,  93, 100, 100
+    'MOVE G6D,100,  76, 145,  93, 100, 100
+    'MOVE G6B,100,  30,  80,
+    'MOVE G6C,100,  30,  80, 190
+    'WAIT
+
     mode = 0
 
     GOTO RX_EXIT
@@ -2127,10 +2302,15 @@ Leg_motor_mode3:
 오른쪽턴5_골프:
     MOTORMODE G6A,3,3,3,3,2
     MOTORMODE G6D,3,3,3,3,2
+
     SPEED 5
-    MOVE G6A,97,  71, 145,  98, 103, 100
-    MOVE G6D,97,  81, 145,  88, 103, 100
+    MOVE G6A,93,  72, 145,  99, 107, 100
+    MOVE G6D,93,  82, 145,  87, 107, 100
     WAIT
+
+    '40회
+    'MOVE G6A,95,  71, 145,  98, 107, 100
+    'MOVE G6D,95,  81, 145,  88, 107, 100
 
     SPEED 12
     MOVE G6A,94,  71, 145,  98, 101, 100
@@ -2139,6 +2319,141 @@ Leg_motor_mode3:
     SPEED 6
     MOVE G6A,101,  76, 146,  93, 98, 100
     MOVE G6D,101,  76, 146,  93, 98, 100
+    WAIT
+
+    'SPEED 5
+    'MOVE G6A,97,  71, 145,  98, 103, 100
+    'MOVE G6D,97,  81, 145,  88, 103, 100
+    'WAIT
+
+    'SPEED 12
+    'MOVE G6A,94,  71, 145,  98, 101, 100
+    'MOVE G6D,94,  81, 145,  88, 101, 100
+    'WAIT
+
+    'SPEED 6
+    'MOVE G6A,101,  76, 146,  93, 98, 100
+    'MOVE G6D,101,  76, 146,  93, 98, 100
+    'WAIT
+
+    MOVE G6A,100,  76, 145,  93, 100, 100
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    mode = 0
+
+    GOTO RX_EXIT
+
+왼쪽턴10_골프:
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
+
+    SPEED 5
+    MOVE G6A,100,  86, 145,  83, 106, 100
+    MOVE G6D,94,  66, 145, 103, 100, 100
+    WAIT
+
+    SPEED 12
+    MOVE G6A,97,  86, 145,  83, 104, 100
+    MOVE G6D,91,  66, 145, 103, 96, 100
+    WAIT
+
+    SPEED 6
+    MOVE G6A,101,  76, 146,  93, 98, 100
+    MOVE G6D,101,  76, 146,  93, 98, 100
+    WAIT
+
+    MOVE G6A,100,  76, 145,  93, 100, 100
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    mode = 0
+
+    RETURN
+    '**********************************************
+오른쪽턴10_골프:
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
+
+    SPEED 5
+    MOVE G6A,97,  66, 145,  103, 103, 100
+    MOVE G6D,97,  86, 145,  83, 103, 100
+    WAIT
+
+    SPEED 12
+    MOVE G6A,94,  66, 145,  103, 101, 100
+    MOVE G6D,94,  86, 145,  83, 101, 100
+    WAIT
+    SPEED 6
+    MOVE G6A,101,  76, 146,  93, 98, 100
+    MOVE G6D,101,  76, 146,  93, 98, 100
+    WAIT
+
+    MOVE G6A,100,  76, 145,  93, 100, 100
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    mode = 0
+
+    RETURN
+
+왼쪽턴20:
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
+    SPEED 8
+    MOVE G6A,95,  96, 145,  73, 105, 100
+    MOVE G6D,95,  56, 145,  113, 105, 100
+    MOVE G6B,110
+    MOVE G6C,90
+    WAIT
+
+    SPEED 12
+    MOVE G6A,93,  96, 145,  73, 105, 100
+    MOVE G6D,93,  56, 145,  113, 105, 100
+    WAIT
+    SPEED 6
+    MOVE G6A,101,  76, 146,  93, 98, 100
+    MOVE G6D,101,  76, 146,  93, 98, 100
+
+    WAIT
+
+    MOVE G6A,100,  76, 145,  93, 100, 100
+    MOVE G6D,100,  76, 145,  93, 100, 100
+    MOVE G6B,100,  30,  80,
+    MOVE G6C,100,  30,  80, 190
+    WAIT
+
+    mode = 0
+
+    GOTO RX_EXIT
+    '**********************************************
+오른쪽턴20:
+    MOTORMODE G6A,3,3,3,3,2
+    MOTORMODE G6D,3,3,3,3,2
+    SPEED 8
+    MOVE G6A,100,  73, 145,  93, 100, 100
+    MOVE G6D,100,  79, 145,  93, 100, 100
+    WAIT
+
+
+    SPEED 6
+    MOVE G6A,100,  84, 145,  78, 100, 100
+    MOVE G6D,100,  68, 145,  108, 100, 100
+    WAIT
+
+    SPEED 9
+    MOVE G6A,90,  90, 145,  78, 102, 100
+    MOVE G6D,104,  71, 145,  105, 100, 100
+    WAIT
+    SPEED 7
+    MOVE G6A,90,  80, 130, 102, 104
+    MOVE G6D,105,  76, 146,  93,  100
     WAIT
 
     MOVE G6A,100,  76, 145,  93, 100, 100
@@ -2158,7 +2473,7 @@ Leg_motor_mode3:
     SPEED 5
     SERVO 11, ELEVEN
 
-    ETX 4800, 53
+    ETX 4800, 51
 
     GOTO RX_EXIT
 
@@ -2196,7 +2511,7 @@ Leg_motor_mode3:
     SPEED 5
     SERVO 16, SIXTEEN
 
-    ETX 4800, 53
+    ETX 4800, 51
 
     GOTO RX_EXIT
 
@@ -2230,7 +2545,7 @@ Leg_motor_mode3:
     SERVO 11, ELEVEN
     SERVO 16, SIXTEEN
 
-    ETX 4800, 53
+    ETX 4800, 51
 
     GOTO RX_EXIT
 
@@ -2306,21 +2621,21 @@ Leg_motor_mode3:
 
     ELSE
 
-        FORNUM = ELEVEN_ROUND / 8										' 몸을 돌릴 횟수를 정한다
+        FORNUM = ELEVEN_ROUND / 5										' 몸을 돌릴 횟수를 정한다
 
         IF FORNUM = 0 THEN
-            IF ELEVEN_ROUND > 4 THEN
+            IF ELEVEN_ROUND > 3 THEN
                 FORNUM = 1
             ENDIF
         ENDIF
 
         IF BOOLEAN = 1 THEN												' 부호에 따라
             FOR i = 1 TO FORNUM											' 방향을 정해 몸을 돌린다.
-                GOSUB 우회전30
+                GOSUB 오른쪽턴10_골프
             NEXT i
         ELSEIF BOOLEAN = 0 THEN
             FOR i = 1 TO FORNUM
-                GOSUB 좌회전30
+                GOSUB 왼쪽턴10_골프
             NEXT i
         ENDIF
 
@@ -2353,21 +2668,21 @@ Leg_motor_mode3:
 
     ELSE
 
-        FORNUM = ELEVEN_ROUND / 8										' 몸을 돌릴 횟수를 정한다
+        FORNUM = ELEVEN_ROUND / 5										' 몸을 돌릴 횟수를 정한다
 
         IF FORNUM = 0 THEN
-            IF ELEVEN_ROUND > 4 THEN
+            IF ELEVEN_ROUND > 3 THEN
                 FORNUM = 1
             ENDIF
         ENDIF
 
         IF BOOLEAN = 1 THEN												' 부호에 따라
             FOR i = 1 TO FORNUM											' 방향을 정해 몸을 돌린다.
-                GOSUB 우회전30
+                GOSUB 오른쪽턴10_골프
             NEXT i
         ELSEIF BOOLEAN = 0 THEN
             FOR i = 1 TO FORNUM
-                GOSUB 좌회전30
+                GOSUB 왼쪽턴10_골프
             NEXT i
         ENDIF
 
@@ -2408,27 +2723,39 @@ Leg_motor_mode3:
 
     ELSE
 
-        FORNUM = ELEVEN_ROUND / 8										' 몸을 돌릴 횟수를 정한다
+        FORNUM = ELEVEN_ROUND / 5										' 몸을 돌릴 횟수를 정한다
 
         IF FORNUM = 0 THEN
-            IF ELEVEN_ROUND > 4 THEN
+            IF ELEVEN_ROUND > 3 THEN
                 FORNUM = 1
             ENDIF
         ENDIF
 
         IF BOOLEAN = 1 THEN												' 부호에 따라
             FOR i = 1 TO FORNUM											' 방향을 정해 몸을 돌린다.
-                GOSUB 우회전30
+                GOSUB 오른쪽턴10_골프
             NEXT i
         ELSEIF BOOLEAN = 0 THEN
             FOR i = 1 TO FORNUM
-                GOSUB 좌회전30
+                GOSUB 왼쪽턴10_골프
             NEXT i
         ENDIF
 
     ENDIF
 
     ETX 4800, 59		'eco										' 에코값을 송신한다
+
+    GOTO RX_EXIT
+
+목읽어몸돌리기4:
+    ERX 4800, SIXTEEN, 목읽어몸돌리기4									' 목좌우모터값을 읽어 저장한다.	
+
+    SERVO 16, SIXTEEN
+    WAIT
+
+    GOSUB 왼쪽턴10_골프
+
+    ETX 4800, 56		'eco										' 에코값을 송신한다
 
     GOTO RX_EXIT
 
@@ -2454,21 +2781,21 @@ Leg_motor_mode3:
 
     ELSE
 
-        FORNUM = ELEVEN_ROUND / 8										' 몸을 돌릴 횟수를 정한다
+        FORNUM = ELEVEN_ROUND / 5										' 몸을 돌릴 횟수를 정한다
 
         IF FORNUM = 0 THEN
-            IF ELEVEN_ROUND > 4 THEN
+            IF ELEVEN_ROUND > 3 THEN
                 FORNUM = 1
             ENDIF
         ENDIF
 
         IF BOOLEAN = 1 THEN												' 부호에 따라
             FOR i = 1 TO FORNUM											' 방향을 정해 몸을 돌린다.
-                GOSUB 우회전30
+                GOSUB 오른쪽턴10_골프
             NEXT i
         ELSEIF BOOLEAN = 0 THEN
             FOR i = 1 TO FORNUM
-                GOSUB 좌회전30
+                GOSUB 왼쪽턴10_골프
             NEXT i
         ENDIF
 
@@ -2736,7 +3063,7 @@ MAIN_2:
         GOTO 무한루프걷기
 
     ELSEIF A = 105 THEN			'공을 추적해라.
-        GOTO 왼쪽옆으로20_골프																	
+        GOTO 왼쪽옆으로20_골프															
 
     ELSEIF A = 106 THEN			'고개 숙여라.연결 완료
         GOTO 오른쪽옆으로20_골프																				
@@ -2779,10 +3106,10 @@ MAIN_2:
         GOTO 목돌려공찾기_좌우_3
 
     ELSEIF A = 117 THEN
-        GOTO 걷기_왼
+        GOTO 왼쪽옆으로10연속_골프
 
     ELSEIF A = 118 THEN
-        GOTO 걷기_오른
+        GOTO 오른쪽옆으로10연속_골프
 
     ELSEIF A = 119 THEN
         GOTO 목돌리기_X10Y75
@@ -2862,6 +3189,9 @@ MAIN_2:
     ELSEIF A = 142 THEN
         GOTO 목돌리기_X190Y75
 
+    ELSEIF A = 143 THEN
+        GOTO 목읽어몸돌리기4
+
     ENDIF
 
     'GOSUB 기본자세
@@ -2876,13 +3206,13 @@ KEY1:
 
     '***************	
 KEY2:
-    GOTO 골프_민초파피샷1
+    GOTO 왼쪽턴20
     GOTO RX_EXIT
 
     '***************
 
 KEY3:
-    GOTO 골프_민초파피샷2
+    GOTO 오른쪽턴20
 
     GOTO RX_EXIT
     '***************
@@ -2902,7 +3232,7 @@ KEY5:
     '***************
 KEY6:
 
-    GOSUB 목숙이기_75
+    GOSUB 걷기_2
 
     GOTO RX_EXIT
 
@@ -2942,16 +3272,16 @@ KEY12:
     GOTO RX_EXIT
 
 KEY13:
-    GOTO 우회전_루프
+    GOTO 왼쪽턴5_골프
 
     GOTO RX_EXIT
 
 KEY14: '왼쪽화살표
-    GOTO 좌회전_루프
+    GOTO 왼쪽턴5_골프
 
     GOTO RX_EXIT
 
 KEY15: 'A
-    GOTO 오른쪽옆으로70연속_골프
+    GOTO 세레머니
 
     GOTO RX_EXIT
